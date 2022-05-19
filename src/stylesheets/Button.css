@@ -1,0 +1,29 @@
+.btn_container{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgb(56, 56, 56);
+    font-size: 2rem;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    cursor: pointer;
+    transition: opacity .180s ease-in-out;
+  }
+.btn_container:hover{
+    opacity: .5;
+}
+
+  .zero_btn{
+    width: 100%;
+    border-radius:10rem;
+  }
+
+  .operator, .equal_btn{
+      background-color: orange
+  }
+
+  .top_grey_btn{
+      background-color: rgb(135, 143, 147);
+  }

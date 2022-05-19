@@ -2,21 +2,65 @@
 
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: #101217;
   min-height: 100vh;
   color: white;
   display: grid;
+  grid-template-columns: 1fr;
   gap: 1.7rem;
   place-content: center;
 }
 .logo_container{
+  margin: 0 auto;
+  width: fit-content;
+  height: fit-content;
   padding: 1rem;
-  background-color: rgb(255, 191, 0);
+  background-color: rgba(0, 251, 255, 0.129);
   color: black;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
 }
 .logo{
+  max-width: 300px;
   max-height: 150px;
+}
+
+.calculator_wrapper{
+  min-width: 300px;
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.row{
+  display: flex;
+  place-content: center;
+  gap: 1rem;
+}
+.custom_row{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.calculator_display{
+  padding: 5rem 1rem 1rem;
+  text-align: right;
+  font-size: 5rem;
+}
+
+sub{
+  height: fit-content;
+  padding-top: 1.2rem;
+}
+sup{
+  padding-bottom: 1rem;
+}
+
+sub, sup {
+  font-size: 1.5rem;
 }
