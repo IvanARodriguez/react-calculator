@@ -47,12 +47,6 @@
   grid-template-columns: 2fr 1fr 1fr;
 }
 
-.calculator_display{
-  padding: 5rem 1rem 1rem;
-  text-align: right;
-  font-size: 5rem;
-}
-
 sub{
   height: fit-content;
   padding-top: 1.2rem;

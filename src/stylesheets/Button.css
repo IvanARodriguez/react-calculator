@@ -21,9 +21,12 @@
   }
 
   .operator, .equal_btn{
-      background-color: orange
+    background-color: orange
   }
-
+  
   .top_grey_btn{
-      background-color: rgb(135, 143, 147);
+    background-color: rgb(135, 143, 147);
+  }
+  .operator:focus{
+    background-color:rgb(255, 255, 255);
   }

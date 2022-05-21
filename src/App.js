@@ -1,44 +1,65 @@
 import './App.css';
-import logo from './images/logo.png';
-import Button from  './components/Button'
+import Button from  './components/Button';
+import Display from './components/Display';
+import { useState } from 'react';
+import { evaluate } from 'mathjs';
 
 function App() {
   
+  const [input, setInput] = useState('');
+
+  const addInput = val =>{
+
+    if(val === 'x') val='*';
+    if(val === '%') val='*';
+    
+    setInput(input + val)
+    
+  }
+
+  const calculate = ()=>{
+    setInput(evaluate(input))
+  }
+
+  const addNegative = ()=> {
+      (input.toString().includes('-')) ? setInput(input.toString().replace('-', '')) : setInput(`-${input}`) 
+  }
+
   return (
     <div className="App">
-      <div className="logo_container">
+      <div className='logo_container'>
         <h1>ABACUS</h1>
       </div>
-      <div className="calculator_wrapper">
-        <div className="calculator_display">0</div>
-        <div className="row">
-          <Button>AC</Button>
-          <Button><sup>+</sup>/<sub>-</sub></Button>
-          <Button>%</Button>
-          <Button>/</Button>
+      <div className='calculator_wrapper'>
+        <Display input={input}/>
+        <div className='row'>
+          <Button handleClick={()=>{setInput('')}}>AC</Button>
+          <Button handleClick={addNegative}><sup>+</sup>/<sub>-</sub></Button>
+          <Button handleClick={addInput}>%</Button>
+          <Button handleClick={addInput}>/</Button>
         </div>
-        <div className="row">
-          <Button>7</Button>
-          <Button>8</Button>
-          <Button>9</Button>
-          <Button>x</Button>
+        <div className='row'>
+          <Button handleClick={addInput}>7</Button>
+          <Button handleClick={addInput}>8</Button>
+          <Button handleClick={addInput}>9</Button>
+          <Button handleClick={addInput}>x</Button>
         </div>
-        <div className="row">
-          <Button>4</Button>
-          <Button>5</Button>
-          <Button>6</Button>
-          <Button>-</Button>
+        <div className='row'>
+          <Button handleClick={addInput}>4</Button>
+          <Button handleClick={addInput}>5</Button>
+          <Button handleClick={addInput}>6</Button>
+          <Button handleClick={addInput}>-</Button>
         </div>
-        <div className="row">
-          <Button>1</Button>
-          <Button>2</Button>
-          <Button>3</Button>
-          <Button>+</Button>
+        <div className='row'>
+          <Button handleClick={addInput}>1</Button>
+          <Button handleClick={addInput}>2</Button>
+          <Button handleClick={addInput}>3</Button>
+          <Button handleClick={addInput}>+</Button>
         </div>
-        <div className="row custom_row">
-          <Button>0</Button>
-          <Button>.</Button>
-          <Button>=</Button>
+        <div className='row custom_row'>
+          <Button handleClick={addInput}>0</Button>
+          <Button handleClick={addInput}>.</Button>
+          <Button handleClick={calculate}>=</Button>
         </div>
       </div>
     </div>

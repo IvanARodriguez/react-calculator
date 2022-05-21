@@ -4,7 +4,7 @@ import '../stylesheets/Button.css';
 function Button(props){
 
     const isOperator = value => {
-        return isNaN(value) && (value != '.') && (value != '=');
+        return isNaN(value) && (value !== '.') && (value !== '=');
     };
     const isZero = value => {
         return (value === '0');
@@ -13,17 +13,19 @@ function Button(props){
         return (value === '=') ;
     };
     const topGreyBtn = value => {
-        console.log(value);
         return (value === '%') || (value === 'AC') || (value.length > 1);
     }
     return(
-        <div  className={
-            `btn_container 
-            ${isOperator(props.children) ? 'operator' : ''}
-            ${topGreyBtn(props.children) ? 'top_grey_btn' : ''}
-            ${isZero(props.children) ? 'zero_btn' : ''}
-            ${isEqual(props.children) ? 'equal_btn' : ''}
-            `.trimEnd()}>
+        <div  
+            className={
+                `btn_container 
+                ${isOperator(props.children) ? 'operator' : ''}
+                ${topGreyBtn(props.children) ? 'top_grey_btn' : ''}
+                ${isZero(props.children) ? 'zero_btn' : ''}
+                ${isEqual(props.children) ? 'equal_btn' : ''}
+                `.trimEnd()}
+            onClick={() => props.handleClick(props.children)}
+        >
             {props.children}
         </div>
     );
