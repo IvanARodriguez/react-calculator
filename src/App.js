@@ -18,7 +18,11 @@ function App() {
   }
 
   const calculate = ()=>{
-    setInput(evaluate(input))
+    if(input) {
+      setInput(evaluate(input));
+    } else {
+      alert('Please enter values to be calculated');
+    }
   }
 
   const addNegative = ()=> {
