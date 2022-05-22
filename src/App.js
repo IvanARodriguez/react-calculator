@@ -15,7 +15,7 @@ function App() {
     
     setInput(input + val)
     
-  }
+  };
 
   const calculate = ()=>{
     if(input) {
@@ -23,11 +23,11 @@ function App() {
     } else {
       alert('Please enter values to be calculated');
     }
-  }
+  };
 
   const addNegative = ()=> {
       (input.toString().includes('-')) ? setInput(input.toString().replace('-', '')) : setInput(`-${input}`) 
-  }
+  };
 
   return (
     <div className="App">
